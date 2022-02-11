@@ -4,9 +4,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Caisse {
+	// Initialisation du scanner et de la liste des produits
 	public static Scanner sc = new Scanner(System.in);
 	public static List<Produit> listProduits = new ArrayList<Produit>();
 
+	/**
+	 * Fonction d'impression du ticket
+	 * @param ticket
+	 */
 	public static void printTicket(Ticket ticket) {
 		double totalFacture = 0;
 		System.out.println("------------------------------------------------------------------");
@@ -25,6 +30,10 @@ public class Caisse {
 		System.out.println(MessageFormat.format("Total TTC : {0}€", totalFacture * ticket.getTva()));
 	}
 	
+	/**
+	 * Fonction récursive permettant d'ajouter plusieurs produits à la liste
+	 * @param ticket
+	 */
 	public static void addProduct(Ticket ticket) {
 		
 		System.out.println("\nVeuillez saisir le nom du produit :");
@@ -64,6 +73,11 @@ public class Caisse {
 		}
 	}
 	
+	/**
+	 * Affichage d'une erreur si la quantité saisie n'est pas un int
+	 * @param string
+	 * @return
+	 */
 	public static boolean isInteger(String string) {
 	    try {
 	        Integer.valueOf(string);
@@ -74,6 +88,11 @@ public class Caisse {
 	    }
 	}
 	
+	/**
+	 * Affichage d'une erreur si le prix saisi n'est pas un nombre
+	 * @param string
+	 * @return
+	 */
 	public static boolean isDouble(String string) {
 	    try {
 	        Double.valueOf(string);
@@ -84,7 +103,10 @@ public class Caisse {
 	    }
 	}
 	
-	
+	/**
+	 * Programme principal
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
